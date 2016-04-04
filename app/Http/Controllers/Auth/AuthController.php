@@ -41,6 +41,7 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
+        dd($data);
         if($data['role']==1)
         {
             return Validator::make($data, [
