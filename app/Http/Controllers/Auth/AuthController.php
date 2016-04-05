@@ -41,21 +41,41 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
-        if($data['role']==1)
+        if($data['role']==1)    //role=Student
         {
             return Validator::make($data, [
                 'name' => 'required|max:255',
                 'email' => 'required|email|max:255|unique:users',
+                'contact'   =>  'required|max:10|min:10',
+                'city'  =>  'required',
+                'state' =>  'required',
                 'role'  =>  'required',
-                'k' =>  'required'
+                'college'   =>  'required',
+                'cgpa'  =>  'required',
+                'percentage'    =>  'required',
+                'year'  =>  'required',
+                'course'    =>  'required'
             ]);
         }
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'role'  =>  'required'
+        else
+        {
+            if($data['job']==1)
+            {
+                return Validator::make($data, [
+                    'name' => 'required|max:255',
+                    'email' => 'required|email|max:255|unique:users',
+                    'role'  =>  'required'
 
-        ]);
+                ]);
+            }
+            return Validator::make($data, [
+                'name' => 'required|max:255',
+                'email' => 'required|email|max:255|unique:users',
+                'role'  =>  'required'
+
+            ]);
+        }
+
     }
 
     /**

@@ -16,8 +16,20 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('password', 60);
-            $table->rememberToken();
+            $table->integer('contact')->unique();
+            $table->string('city');
+            $table->string('state');
+            $table->integer('subject_id');
+            $table->integer('role');
+            $table->string('college');
+            $table->string('cgpa');
+            $table->string('year');
+            $table->string('course');
+            $table->string('percentage');
+            $table->integer('night');
+            $table->string('institute');
+            $table->string('experience');
+            $table->text('about_you');
             $table->timestamps();
         });
     }

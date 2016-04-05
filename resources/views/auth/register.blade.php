@@ -38,7 +38,10 @@
         {!! Form::label('course','Course') !!}
         {!! Form::text('course',null) !!}
     </div>
-
+    <div>
+        {!! Form::label('percentage','12th board %') !!}
+        {!! Form::text('percentage',null) !!}
+    </div>
     <div>
         {!! Form::label('night','Can you Dedicate late night hours ?') !!}
         <input type="radio" name="night" value="1" checked> Yes<br>
