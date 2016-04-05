@@ -4,10 +4,10 @@
     <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
         <form method="POST" action="/auth/register">
     {!! csrf_field() !!}
-
+            @include('errors.list')
     <div class="form-group">
-        {!! Form::label('Name','Name:') !!}
-        {!! Form::text('Name',null,['class'=>'form-control']) !!}
+        {!! Form::label('name','Name:') !!}
+        {!! Form::text('name',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('email','Email Address:') !!}
@@ -17,7 +17,14 @@
         {!! Form::label('contact','Contact Number:') !!}
         {!! Form::text('contact',null,['class'=>'form-control']) !!}
     </div>
-
+            <div class="form-group">
+                {!! Form::label('city','City:') !!}
+                {!! Form::text('city',null,['class'=>'form-control']) !!}
+            </div>
+            <div class="form-group">
+                {!! Form::label('state','State:') !!}
+                {!! Form::text('state',null,['class'=>'form-control']) !!}
+            </div>
     <div class="form-group">
         {!! Form::label('about_you','About You:') !!}
         {!! Form::textarea('about_you',null,['rows'=>"3",'class'=>'form-control']) !!}
@@ -88,23 +95,7 @@
     </div>
 </form>
     </div>
-<!--<form>
 
-    <div class="radio">
-        <label>
-            <input type="radio" name="role" id="optionsRadios1" value="option1" checked>
-            Student
-        </label>
-    </div>
-    <div class="radio">
-        <label>
-            <input type="radio" name="role" id="optionsRadios2" value="option2">
-            Expert
-        </label>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>-->
 
 @endsection
 
