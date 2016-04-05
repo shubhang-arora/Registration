@@ -29,28 +29,42 @@
         {!! Form::label('about_you','About You:') !!}
         {!! Form::textarea('about_you',null,['rows'=>"3",'class'=>'form-control']) !!}
     </div>
-    <div>
-        {!! Form::label('role','Role ') !!}
-        <label class="radio-inline"><input type="radio" name="role" value="1" checked>Student</label>
-        <label class="radio-inline"><input type="radio" name="role" value="0">Expert</label>
-    </div>
-    <div class="student">
-        <div class="form-group">
-            {!! Form::label('college','College:') !!}
-            {!! Form::text('college',null,['class'=>'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('cgpa','Current CGPA:') !!}
-            {!! Form::text('cgpa',null,['class'=>'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('year','Year:') !!}
-            {!! Form::text('year',null,['class'=>'form-control']) !!}
-        </div>
-        <div class="form-group">
+            <div>
+                {!! Form::label('role','Role ') !!}
+                <label class="radio-inline"><input type="radio" name="role" value="1" checked>Student</label>
+                <label class="radio-inline"><input type="radio" name="role" value="0">Expert</label>
+            </div>
+            <div>
+
+
+                {!! Form::label('subject_id','Subject:') !!}
+                <span class="styled-select">
+                    {!! Form::select('subject_id',$subjects,null,['class'=>'required-item','id'=>'subject_id','aria-required'=>'true']) !!}
+                </span>
+
+            </div>
+            <div class="student">
+                <div class="form-group">
+                    {!! Form::label('college','College:') !!}
+                    {!! Form::text('college',null,['class'=>'form-control']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('cgpa','Current CGPA:') !!}
+                    {!! Form::text('cgpa',null,['class'=>'form-control']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('year','Year:') !!}
+                    {!! Form::text('year',null,['class'=>'form-control']) !!}
+                </div>
+                <div class="form-group">
             {!! Form::label('course','Course') !!}
             {!! Form::text('course',null,['class'=>'form-control']) !!}
         </div>
+                <div class="form-group">
+                    {!! Form::label('percentage','12th Board %') !!}
+                    {!! Form::text('percentage',null,['class'=>'form-control']) !!}
+                </div>
+
     </div>
     <div class="form-group">
         {!! Form::label('night','Can you Dedicate late night hours ? ') !!}
@@ -132,5 +146,8 @@
             role($(this).val());
         });
 
+    </script>
+    <script type="text/javascript">
+        $('#subject_id').select2();
     </script>
 @endsection

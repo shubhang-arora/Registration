@@ -6,4 +6,7 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="{{asset('js/clean-blog.min.js')}}"></script>
+
+<!-- Select 2 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
 @yield('script')

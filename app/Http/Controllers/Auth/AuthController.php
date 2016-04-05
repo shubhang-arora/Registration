@@ -44,9 +44,10 @@ class AuthController extends Controller
 
         if($data['role']==1)    //role=Student
         {
+
             return Validator::make($data, [
                 'name'          => 'required|max:255',
-                'email'         => 'required|email|max:255|unique:users',
+                'email'         => 'required|email|max:255',
                 'contact'       =>  'required|max:10|min:10',
                 'city'          =>  'required',
                 'state'         =>  'required',
@@ -56,7 +57,8 @@ class AuthController extends Controller
                 'percentage'    =>  'required',
                 'year'          =>  'required',
                 'course'        =>  'required',
-                'night'         =>  'required'
+                'night'         =>  'required',
+                'subject_id'       =>  'required'
             ]);
         }
         else
@@ -65,7 +67,7 @@ class AuthController extends Controller
             {
                 return Validator::make($data, [
                     'name'          => 'required|max:255',
-                    'email'         => 'required|email|max:255|unique:users',
+                    'email'         => 'required|email|max:255',
                     'contact'       =>  'required|max:10|min:10',
                     'city'          =>  'required',
                     'state'         =>  'required',
@@ -75,7 +77,8 @@ class AuthController extends Controller
                     'night'         =>  'required',
                     'content'       =>  'required',
                     'job'           =>  'required',
-                    'expected'      =>  'required'
+                    'expected'      =>  'required',
+                    'subject_id'       =>  'required'
 
                 ]);
             }
@@ -94,7 +97,8 @@ class AuthController extends Controller
                     'content'       =>  'required',
                     'job'           =>  'required',
                     'expected'      =>  'required',
-                    'hours'         =>  'required'
+                    'hours'         =>  'required',
+                    'subject_id'       =>  'required'
 
                 ]);
             }
@@ -111,10 +115,66 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        if($data['role']==1)
+        {
+
+            return User::create([
+                'name'          =>  $data['name'],
+                'email'         =>  $data['email'],
+                'contact'       =>  $data['contact'],
+                'city'          =>  $data['city'],
+                'state'         =>  $data['state'],
+                'role'          =>  $data['role'],
+                'subject_id'       =>  $data['subject_id'],
+                'college'       =>  $data['college'],
+                'cgpa'          =>  $data['cgpa'],
+                'year'          =>  $data['year'],
+                'course'        =>  $data['course'],
+                'night'         =>  $data['night'],
+                'percentage'    =>  $data['percentage'],
+                'about_you'     =>  $data['about_you']
+            ]);
+        }
+        else
+        {
+            if($data['job']==1)
+            {
+                return User::create([
+                    'name' => $data['name'],
+                    'email' => $data['email'],
+                    'contact'   =>  $data['contact'],
+                    'city'  =>  $data['city'],
+                    'state' =>  $data['state'],
+                    'role'  =>  $data['role'],
+                    'subject_id'    =>  $data['subject_id'],
+                    'institute' =>  $data['institute'],
+                    'experience'    =>  $data['experience'],
+                    'content'   =>  $data['content'],
+                    'job'   =>  $data['job'],
+                    'expected'  =>  $data['expected'],
+                    'about_you'     =>  $data['about_you']
+                ]);
+            }
+            else
+            {
+                return User::create([
+                    'name' => $data['name'],
+                    'email' => $data['email'],
+                    'contact'   =>  $data['contact'],
+                    'city'  =>  $data['city'],
+                    'state' =>  $data['state'],
+                    'role'  =>  $data['role'],
+                    'subject_id'    =>  $data['subject_id'],
+                    'institute' =>  $data['institute'],
+                    'experience'    =>  $data['experience'],
+                    'content'   =>  $data['content'],
+                    'job'   =>  $data['job'],
+                    'expected'  =>  $data['expected'],
+                    'hours' => $data['hours'],
+                    'about_you'     =>  $data['about_you']
+                ]);
+            }
+        }
+
     }
 }
