@@ -102,6 +102,9 @@
             {!! Form::text('expected',null,['class'=>'form-control']) !!}
         </div>
     </div>
+            <div clas="form-group">
+                {!! Recaptcha::render() !!}
+            </div>
 
 
     <div class="form-group">

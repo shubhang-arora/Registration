@@ -58,7 +58,8 @@ class AuthController extends Controller
                 'year'          =>  'required',
                 'course'        =>  'required',
                 'night'         =>  'required',
-                'subject_id'       =>  'required'
+                'subject_id'       =>  'required',
+                'g-recaptcha-response' => 'required|recaptcha',
             ]);
         }
         else
@@ -78,7 +79,8 @@ class AuthController extends Controller
                     'content'       =>  'required',
                     'job'           =>  'required',
                     'expected'      =>  'required',
-                    'subject_id'       =>  'required'
+                    'subject_id'       =>  'required',
+                    'g-recaptcha-response' => 'required|recaptcha',
 
                 ]);
             }
@@ -98,7 +100,8 @@ class AuthController extends Controller
                     'job'           =>  'required',
                     'expected'      =>  'required',
                     'hours'         =>  'required',
-                    'subject_id'       =>  'required'
+                    'subject_id'       =>  'required',
+                    'g-recaptcha-response' => 'required|recaptcha',
 
                 ]);
             }
