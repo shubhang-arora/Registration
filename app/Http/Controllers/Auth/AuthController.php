@@ -47,8 +47,8 @@ class AuthController extends Controller
 
             return Validator::make($data, [
                 'name'          => 'required|max:255',
-                'email'         => 'required|email|max:255',
-                'contact'       =>  'required|max:10|min:10',
+                'email'         => 'required|unique:users|email|max:255',
+                'contact'       =>  'required|unique:users|max:10|min:10',
                 'city'          =>  'required',
                 'state'         =>  'required',
                 'role'          =>  'required',
@@ -59,7 +59,6 @@ class AuthController extends Controller
                 'course'        =>  'required',
                 'night'         =>  'required',
                 'subject_id'       =>  'required',
-                'g-recaptcha-response' => 'required|recaptcha',
             ]);
         }
         else
@@ -68,8 +67,8 @@ class AuthController extends Controller
             {
                 return Validator::make($data, [
                     'name'          => 'required|max:255',
-                    'email'         => 'required|email|max:255',
-                    'contact'       =>  'required|max:10|min:10',
+                    'email'         => 'required|unique:users|email|max:255',
+                    'contact'       =>  'required|unique:users|max:10|min:10',
                     'city'          =>  'required',
                     'state'         =>  'required',
                     'role'          =>  'required',
@@ -80,7 +79,6 @@ class AuthController extends Controller
                     'job'           =>  'required',
                     'expected'      =>  'required',
                     'subject_id'       =>  'required',
-                    'g-recaptcha-response' => 'required|recaptcha',
 
                 ]);
             }
@@ -88,8 +86,8 @@ class AuthController extends Controller
             {
                 return Validator::make($data, [
                     'name'          => 'required|max:255',
-                    'email'         => 'required|email|max:255',
-                    'contact'       =>  'required|max:10|min:10',
+                    'email'         => 'required|unique:users|email|max:255',
+                    'contact'       =>  'required|unique:users|max:10|min:10',
                     'city'          =>  'required',
                     'state'         =>  'required',
                     'role'          =>  'required',
@@ -101,7 +99,6 @@ class AuthController extends Controller
                     'expected'      =>  'required',
                     'hours'         =>  'required',
                     'subject_id'       =>  'required',
-                    'g-recaptcha-response' => 'required|recaptcha',
 
                 ]);
             }
