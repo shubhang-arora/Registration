@@ -59,6 +59,7 @@ class AuthController extends Controller
                 'course'        =>  'required',
                 'night'         =>  'required',
                 'subject_id'       =>  'required',
+                'g-recaptcha-response' => 'required|recaptcha',
             ]);
         }
         else
@@ -79,6 +80,7 @@ class AuthController extends Controller
                     'job'           =>  'required',
                     'expected'      =>  'required',
                     'subject_id'       =>  'required',
+                    'g-recaptcha-response' => 'required|recaptcha',
 
                 ]);
             }
@@ -99,6 +101,7 @@ class AuthController extends Controller
                     'expected'      =>  'required',
                     'hours'         =>  'required',
                     'subject_id'       =>  'required',
+                    'g-recaptcha-response' => 'required|recaptcha',
 
                 ]);
             }
