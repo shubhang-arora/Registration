@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
+<div class="container">
     <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
         <form method="POST" action="/auth/register">
     {!! csrf_field() !!}
@@ -107,11 +108,13 @@
             </div>
 
 
-    <div class="form-group">
+    <div class="form-group" style="text-align: center">
         <button type="submit" class="btn btn-primary">Register</button>
     </div>
 </form>
     </div>
+</div>
+    
 
 
 @endsection

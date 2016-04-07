@@ -7,7 +7,7 @@
 
 <!-- Bootstrap Core CSS -->
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-
+<link href="{{asset('css/mdb.min.css')}}" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="{{asset('css/clean-blog.min.css')}}" rel="stylesheet">
 <!-- Some Meta tags -->
@@ -20,8 +20,8 @@
 <meta property=”og:description” content=” Education Excellence aims to concentrate and channelize the efforts of all exam aspirants in the right direction, in order to achieve the maximum.”/>
 
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
 
 <!-- Google analytics script.. -->
