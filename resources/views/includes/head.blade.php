@@ -1,8 +1,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
+
 
 <title>Education Excellence, Kota</title>
 
@@ -12,6 +11,7 @@
 <!-- Custom CSS -->
 <link href="{{asset('css/clean-blog.min.css')}}" rel="stylesheet">
 <!-- Some Meta tags -->
+<meta name="google-site-verification" content="fzPpDj3eUn29wwvxKOYZfbPYPV3Z7-67TEHe8bc6ugA" />
 <meta name="keywords" content="iit, jee, kota, excellence, education, iitjee, bitsat, iit coaching, careers, eekota, rajasthan, kota, online,coaching">
 <meta name="description" content="Education Excellence aims to concentrate and channelize the efforts of all exam aspirants in the right direction, in order to achieve the maximum.">
 <meta property=”og:title” content=” Education Excellence, Kota”/>
