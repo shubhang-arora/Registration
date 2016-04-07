@@ -4,15 +4,21 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>AskIITians</title>
+<title>Education Excellence, Kota</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
 <!-- Custom CSS -->
 <link href="{{asset('css/clean-blog.min.css')}}" rel="stylesheet">
+<!-- Some Meta tags -->
+<meta name="keywords" content="iit, jee, kota, excellence, education, iitjee, bitsat, iit coaching, careers, eekota, rajasthan, kota, online,coaching">
+<meta name="description" content="Education Excellence aims to concentrate and channelize the efforts of all exam aspirants in the right direction, in order to achieve the maximum.">
+<meta property=”og:title” content=” Education Excellence, Kota”/>
+<meta property=”og:image” content=”http://i.imgur.com/Cq7TNE2.png”/>
+<meta property=”og:url” content=”http://www.eekota.com”/>
+<meta property=”og:description” content=” Education Excellence aims to concentrate and channelize the efforts of all exam aspirants in the right direction, in order to achieve the maximum.”/>
 
-<!-- Custom Fonts -->
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
