@@ -39,9 +39,8 @@ trait RegistersUsers
                 $request, $validator
             );
         }
-        //$this->sendMail($request->get('email'));
-        //$this->sendText($request->get('contact'));
-       // Auth::login($this->create($request->all()));
+        $this->sendMail($request->get('email'));
+        $this->sendText($request->get('contact'));
         $this->create($request->all());
         return redirect($this->redirectPath())->with('registered', true);
     }
