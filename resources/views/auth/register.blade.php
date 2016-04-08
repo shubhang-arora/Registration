@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
     <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
-        <form method="POST" action="/auth/register">
-    {!! csrf_field() !!}
+        {!! Form::open(array('url'=>'/auth/register','method'=>'POST', 'files'=>true)) !!}
+            {!! csrf_field() !!}
             @include('errors.list')
     <div class="form-group">
         {!! Form::label('name','Name:') !!}
@@ -102,8 +102,13 @@
             {!! Form::label('expected','Expected Salary') !!}
             {!! Form::text('expected',null,['class'=>'form-control']) !!}
         </div>
+
     </div>
-            <div clas="form-group">
+        <div class="form-group">
+            {!! Form::label('resume','Upload Resume') !!}
+            {!! Form::file('resume') !!}
+        </div>
+            <div class="form-group">
                 {!! Recaptcha::render() !!}
             </div>
 
@@ -111,7 +116,7 @@
     <div class="form-group" style="text-align: center">
         <button type="submit" class="btn btn-primary">Register</button>
     </div>
-</form>
+{!! Form::close() !!}
     </div>
 </div>
     

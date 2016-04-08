@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -59,6 +61,7 @@ class AuthController extends Controller
                 'course'        =>  'required',
                 'night'         =>  'required',
                 'subject_id'       =>  'required',
+                'resume'        =>  'required|mimes:pdf|max:32000'
             ]);
         }
         else
@@ -79,6 +82,7 @@ class AuthController extends Controller
                     'job'           =>  'required',
                     'expected'      =>  'required',
                     'subject_id'       =>  'required',
+                    'resume'        =>  'required|mimes:pdf|max:32000'
 
                 ]);
             }
@@ -99,6 +103,7 @@ class AuthController extends Controller
                     'expected'      =>  'required',
                     'hours'         =>  'required',
                     'subject_id'       =>  'required',
+                    'resume'        =>  'required|mimes:pdf|max:32000'
 
                 ]);
             }
@@ -115,6 +120,20 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+
+        if ($data['resume']->isValid()) {
+            $destinationPath = 'uploads/resume'; // upload path
+            $extension = $data['resume']->getClientOriginalExtension();
+            $fileName = date("mdYGi").rand(1111111,9999999).'.'.$extension;
+            $data['resume']->move($destinationPath, $fileName); // uploading file to given path
+            // sending back with message
+            $data['resume-link'] = '/'.$destinationPath.'/'.$fileName;
+        }
+        else {
+            // sending back with error message.
+            Session::flash('error', 'Uploaded file is not valid');
+            return redirect($this->redirectPath());
+        }
         if($data['role']==1)
         {
 
@@ -132,7 +151,8 @@ class AuthController extends Controller
                 'course'        =>  $data['course'],
                 'night'         =>  $data['night'],
                 'percentage'    =>  $data['percentage'],
-                'about_you'     =>  $data['about_you']
+                'about_you'     =>  $data['about_you'],
+                'resume'    =>  $data['resume-link']
             ]);
         }
         else
@@ -152,7 +172,8 @@ class AuthController extends Controller
                     'content'   =>  $data['content'],
                     'job'   =>  $data['job'],
                     'expected'  =>  $data['expected'],
-                    'about_you'     =>  $data['about_you']
+                    'about_you'     =>  $data['about_you'],
+                    'resume'    =>  $data['resume-link']
                 ]);
             }
             else
@@ -171,7 +192,8 @@ class AuthController extends Controller
                     'job'   =>  $data['job'],
                     'expected'  =>  $data['expected'],
                     'hours' => $data['hours'],
-                    'about_you'     =>  $data['about_you']
+                    'about_you'     =>  $data['about_you'],
+                    'resume'    =>  $data['resume-link']
                 ]);
             }
         }
