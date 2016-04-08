@@ -5,19 +5,21 @@
 
 <title>Education Excellence, Kota</title>
 
+<meta name="google-site-verification" content="fzPpDj3eUn29wwvxKOYZfbPYPV3Z7-67TEHe8bc6ugA" />
+<meta name="keywords" content="iit, jee, kota, excellence, education, iitjee, bitsat, iit coaching, careers, eekota, rajasthan, kota, online,coaching">
+<meta name="description" content="Education Excellence aims to concentrate and channelize the efforts of all exam aspirants in the right direction, in order to achieve the maximum.">
+<meta property="og:title" content="Education Excellence, Kota"/>
+<meta property="og:image" content="http://i.imgur.com/Cq7TNE2.png"/>
+<meta property="og:url" content="http://www.eekota.com"/>
+<meta property="og:description" content="Education Excellence aims to concentrate and channelize the efforts of all exam aspirants in the right direction, in order to achieve the maximum."/>
+
+
 <!-- Bootstrap Core CSS -->
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 <link href="{{asset('css/mdb.min.css')}}" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="{{asset('css/clean-blog.min.css')}}" rel="stylesheet">
 <!-- Some Meta tags -->
-<meta name="google-site-verification" content="fzPpDj3eUn29wwvxKOYZfbPYPV3Z7-67TEHe8bc6ugA" />
-<meta name="keywords" content="iit, jee, kota, excellence, education, iitjee, bitsat, iit coaching, careers, eekota, rajasthan, kota, online,coaching">
-<meta name="description" content="Education Excellence aims to concentrate and channelize the efforts of all exam aspirants in the right direction, in order to achieve the maximum.">
-<meta property=”og:title” content=” Education Excellence, Kota”/>
-<meta property=”og:image” content=”http://i.imgur.com/Cq7TNE2.png”/>
-<meta property=”og:url” content=”http://www.eekota.com”/>
-<meta property=”og:description” content=” Education Excellence aims to concentrate and channelize the efforts of all exam aspirants in the right direction, in order to achieve the maximum.”/>
 
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,400italic,700italic' rel='stylesheet' type='text/css'>

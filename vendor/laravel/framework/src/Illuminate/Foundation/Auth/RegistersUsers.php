@@ -43,7 +43,7 @@ trait RegistersUsers
         //$this->sendText($request->get('contact'));
        // Auth::login($this->create($request->all()));
         $this->create($request->all());
-        return redirect($this->redirectPath());
+        return redirect($this->redirectPath())->with('registered', true);
     }
 
     public function sendMail($email)

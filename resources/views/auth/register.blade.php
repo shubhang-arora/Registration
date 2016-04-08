@@ -1,6 +1,24 @@
 @extends('layouts.layout')
 
 @section('content')
+    @if (session('registered'))
+        <div class="modal fade" tabindex="-1" role="dialog" id="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Welcome to EE Kota</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Thank you for registering with us. We'll get back to you soon.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    @endif
 <div class="container">
     <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
         {!! Form::open(array('url'=>'/auth/register','method'=>'POST', 'files'=>true)) !!}
@@ -146,6 +164,9 @@
             }
         }
         $(document).ready(function () {
+            if($("#modal").length > 0) {
+                $('#modal').modal();
+            }
             job($('[name="job"]').val());
             role($('[name="role"]').val());
         });
