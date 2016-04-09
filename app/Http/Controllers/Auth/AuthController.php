@@ -41,7 +41,19 @@ class AuthController extends Controller
             $login = true;
             $student = DB::table('users')->where('role', 1)->orderBy('created_at', 'desc')->get();
             $expert = DB::table('users')->where('role', 0)->orderBy('created_at', 'desc')->get();
+            $stuVal=[
+
+                'name','email','contact','city','state','role','institute','experience','night','content','job','expected','subject_id','resume'
+            ];
+            $expVal=[
+                'name','email','contact','city','state','role','institute','experience','night','content','job','expected','hours','subject_id','resume'
+            ];
             foreach($student as $stu){
+                foreach($stu as $key=>$val){
+                    if(!in_array($key,$stuVal)){
+                        $val='';
+                    }
+                }
                 if($stu->night){
                     $stu->night="Yes";
                 }
@@ -51,6 +63,11 @@ class AuthController extends Controller
                 $stu->role='';
             }
             foreach($expert as $exp){
+                foreach($exp as $key=>$val){
+                    if(!in_array($key,$expVal)){
+                        $val='';
+                    }
+                }
                 if($exp->night){
                     $exp->night="Yes";
                 }
@@ -88,8 +105,8 @@ class AuthController extends Controller
         {
 
             return Validator::make($data, [
-                'name'          => 'required|max:255',
-                'email'         => 'required|unique:users|email|max:255',
+                'name'          =>  'required|max:255',
+                'email'         =>  'required|unique:users|email|max:255',
                 'contact'       =>  'required|unique:users|max:10|min:10',
                 'city'          =>  'required',
                 'state'         =>  'required',
@@ -100,7 +117,7 @@ class AuthController extends Controller
                 'year'          =>  'required',
                 'course'        =>  'required',
                 'night'         =>  'required',
-                'subject_id'       =>  'required',
+                'subject_id'    =>  'required',
                 'resume'        =>  'required|mimes:pdf|max:32000'
             ]);
         }
