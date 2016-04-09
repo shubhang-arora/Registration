@@ -15,3 +15,9 @@
 // Registration routes...
 Route::get('/', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+Route::get('/view',function(){
+    return view('home');
+});
+
+Route::post('/authorise','Auth\AuthController@authorise');

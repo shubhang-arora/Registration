@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
+    <h4 class="header-tag">Register</h4>
     @if (session('registered'))
         <div class="modal fade" tabindex="-1" role="dialog" id="modal">
             <div class="modal-dialog">

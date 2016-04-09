@@ -15,7 +15,6 @@
     </div> -->
     <img src="{{asset('banner.jpg')}}" >
 </header>
-<h4 class="header-tag">Register</h4>
 <style type="text/css">
 	.header-tag{
 		text-align: center;

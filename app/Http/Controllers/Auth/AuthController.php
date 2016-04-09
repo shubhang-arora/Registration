@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Validator;
@@ -25,14 +27,52 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+
     /**
      * Create a new authentication controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
+    }
+
+    public function authorise(Request $request){
+        if($request->get('pass')==env('password')) {
+            $login = true;
+            $student = DB::table('users')->where('role', 1)->orderBy('created_at', 'desc')->get();
+            $expert = DB::table('users')->where('role', 0)->orderBy('created_at', 'desc')->get();
+            foreach($student as $stu){
+                if($stu->night){
+                    $stu->night="Yes";
+                }
+                else{
+                    $stu->night="No";
+                }
+                $stu->role='';
+            }
+            foreach($expert as $exp){
+                if($exp->night){
+                    $exp->night="Yes";
+                }
+                else{
+                    $exp->night="No";
+                }
+                if($exp->content){
+                    $exp->content="Yes";
+                }
+                else{
+                    $exp->content="No";
+                }
+                if($exp->job){
+                    $exp->job="Yes";
+                }
+                else{
+                    $exp->job="No";
+                }
+            }
+            return view('home',compact('student','expert','login'));
+        }
+        return redirect()->back()->with('status', 'Wrong Admin Password');
     }
 
     /**
